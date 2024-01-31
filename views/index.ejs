@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1 style="text-align: center;">Comments</h1>
+    </header>
+    <div class="comments">
+
+        <div class="container">
+            <p class="addedvalue">nice video</p>
+              <p class="nestcmt">hi</p>
+            
+         </div>
+         <div class="container">
+            <p class="addedvalue">nice audio </p>
+              <p class="nestcmt">nice</p>
+          
+         </div>
+         <div class="container">
+            <p class="addedvalue">amazing</p>
+              <p class="nestcmt">very nice</p>
+              </div>
+           
+      
+        <%  if(locals.cmts){%>
+<%for(let i=0;i<cmts.length;i++){%>
+     <div class="container">
+        <p class="addedvalue">
+        <%=cmts[i].comment%>
+        </p>
+
+        <button class="rep">reply</button>
+        
+        <div class="repcls">
+
+        <form action="/addpost" method="post">
+            <input type="text" name="rep" id="rep">
+
+            <button class="repsubmit" type="submit">submit</button>
+        </form></div>
+     </div>
+     <%}%>
+     <% } %>
+    </div>
+    <div style="position: absolute;
+    left:40%;
+     bottom:10px;
+     align-items:center;
+     width: 100%;
+     justify-content: center;
+     margin: auto;">
+        <form action="/adcmt" method="post">
+
+        <input type="text" name="cmt" id="cmt" placeholder="enter your comments">
+        <button type="submit">submit</button>
+    </form>
+    
+    </div>
+    </div>
+    <script>
+    
+           let r=document.querySelector(".rep");
+           r.addEventListener("click", function() {
+            console.log("hi");
+            r.style.display="none";
+  document.querySelector(".repcls").style.display = "block";
+
+
+});
+
+let re=document.querySelector(".repsubmit");
+           r.addEventListener("click", function() {
+let value=document.querySelector("#rep").value;
+     
+    
+           });
+         
+         
+
+
+    </script>
+</body>
+</html>
