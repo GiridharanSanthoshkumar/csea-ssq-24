@@ -1,0 +1,27 @@
+body{
+    background-color:rebeccapurple;
+}
+.container{
+    width: 50vw;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+
+    min-height: 20%;
+    position: relative;
+    margin: auto;
+}
+.nestcmt{ 
+    margin-left:5%;
+
+    background-color:#8d9ca9;
+    
+}
+.repcls{
+    display: none ;
+    
+}
+#cmt{
+    height: 20px;
+    width:200px;
+}
